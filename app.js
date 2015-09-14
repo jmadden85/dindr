@@ -1,10 +1,13 @@
-var http = require('http');
-var fs = require('fs');
-var index = fs.readFileSync('index.html');
+var express = require('express');
+var app = express();
 
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/html'});
-  res.end(index);
-}).listen(8080, '127.0.0.1');
+app.get('/', function (req, res) {
+  res.send('Hello World!');
+});
 
-console.log('Server running at http://127.0.0.1:8080/');
+var server = app.listen(3000, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+
+  console.log('Example app listening at http://%s:%s', host, port);
+});

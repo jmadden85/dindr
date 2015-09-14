@@ -18,5 +18,8 @@
   "homepage": "https://github.com/jmadden85/dindr",
   "devDependencies": {
     "bower": "^1.5.2"
+  },
+  "dependencies": {
+    "express": "^4.13.3"
   }
 }
